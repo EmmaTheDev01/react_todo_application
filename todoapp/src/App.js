@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import './App.css';
+import './style.css'
 
 function App() {
-  const [task,setTask] = useState([]);
+  const [task,setTask] = useState("");
   const [items,setItems] = useState([]);
 
   const addItem = () => {
@@ -18,16 +19,20 @@ function App() {
     console.log(task);
     console.log(items); 
   }
+
+  const deleteItem = (id) => {
+    
+  }
   return (
     <div className="App">
      <h1>To Do List Application</h1>
-     <input type="text" placeholder='Enter Task name' value={task} onChange = {e => setTask(e.target.value)} />
-     <button onClick={() => addItem()}>Add Task</button>
+     <input type="text" className='input' placeholder='Enter Task name' value={task} onChange = {e => setTask(e.target.value)} />
+     <button className='add_btn' onClick={() => addItem()}>Add Task</button>
 
      <ul>
       {items.map(item => {
         return (
-          <li key={item.id}>{item.value}</li>
+          <li className='list_of_tasks' key={item.id}>{item.value}<button className='delete_btn' onClick={() => deleteItem(item.id)}>Delete</button></li>
         )
       })}
      </ul>

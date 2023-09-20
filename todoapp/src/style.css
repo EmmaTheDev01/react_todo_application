@@ -1,0 +1,15 @@
+.input{
+    padding: 1rem;
+    width: 20rem;
+}
+.add_btn{
+    padding: 1.1rem;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+}
+.list_of_tasks{
+    padding: 1rem;
+    font-size: 1rem;
+    list-style-type: none;
+}
